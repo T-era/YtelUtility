@@ -49,7 +49,7 @@ public class TableViewport extends JViewport {
 	/**
 	 * 単行選択の表を持つインスタンスを生成します。
 	 * 初期表示に表示内容を指定します。
-	 * @param titles 表示内容(項目名) 
+	 * @param titles 表示内容(項目名)
 	 * @param values 表示内容(表示内容)
 	 */
 	public TableViewport( Object[] titles, Object[][] values, Font recomendFont ){
@@ -66,7 +66,7 @@ public class TableViewport extends JViewport {
 
 	/**
 	 * [1レコード選択/複数件選択]の指定と、初期表示に表示内容の指定をして、インスタンスを生成します。
-	 * @param titles 表示内容(項目名) 
+	 * @param titles 表示内容(項目名)
 	 * @param values 表示内容(表示内容)
 	 * @param selectionMode [1レコード選択/複数件選択]s
 	 */
@@ -110,7 +110,7 @@ public class TableViewport extends JViewport {
 	 * newTableに適切なデータ内容を与えるのは呼び出し側の責任です。
 	 * @param titles 項目名一覧
 	 * @param values 設定値一覧
-	 * @param newTable 
+	 * @param newTable
 	 */
 	protected final void setDatas(Object[] titles, Object[][] values, JTable newTable){
 		if (table != null) {

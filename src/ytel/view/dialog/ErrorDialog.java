@@ -15,7 +15,7 @@ import javax.swing.JTextArea;
  */
 public class ErrorDialog extends JDialog {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 

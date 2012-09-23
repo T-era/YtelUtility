@@ -21,7 +21,7 @@ public class UtilityVersionInfo {
 	/**
 	 * バージョン情報ファイル名
 	 */
-	private static final String VERSION_FILE = "/ytel/util/version.properties";
+	private static final String VERSION_FILE = "/ytel/util/version.xml";
 
 	/**
 	 * バージョン情報を返します。
@@ -30,7 +30,7 @@ public class UtilityVersionInfo {
 	 * @throws SAXException 情報ファイルの読み込みに失敗した場合
 	 */
 	public static VersionInfo getVersion() throws IOException, SAXException {
-		InputStream is = UtilityVersionInfo.class.getResourceAsStream("/ytel/util/version.properties");
+		InputStream is = UtilityVersionInfo.class.getResourceAsStream(VERSION_FILE);
 		try {
 			return VersionInfo.getVersionInfo(is);
 		}finally{
@@ -48,7 +48,7 @@ public class UtilityVersionInfo {
 	 * @throws IOException 情報ファイルの読み込みに失敗した場合
 	 * @throws SAXException 情報ファイルの読み込みに失敗した場合
 	 */
-	public static JDialog getVersionDialog(JFrame parent, String title, String appName) throws IOException, SAXException {
-		return VersionDialog.getDialog(parent, title, appName, getVersion());
+	public static JDialog getVersionDialog(JFrame parent, String title) throws IOException, SAXException {
+		return VersionDialog.getDialog(parent, title, getVersion());
 	}
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Version>
+  <Application name="Ytel Utitilies"/>
+  <Major number="1" note="">
+    <Minor number="0">
+      <Revision number="0" note="FirstRelease"/>
+      <Revision number="1" note="mathパッケージ追加"/>
+      <Revision number="2" note="TextAreaTabbedPaneのコンストラクタ追加" description="「閉じる」ボタンにフォーカスをさせないオプションの追加"/>
+      <Revision number="3" note="メソッド追加 UtilityVersionInfo#getVersionDialog" description="ヴァージョン情報表示ダイアログ"/>
+    </Minor>
+    <Minor number="1">
+      <Revision number="0" note="ヴァージョン情報ファイル(xml)のDTDとXSD対応。"/>
+    </Minor>
+    <Minor number="2">
+      <Revision number="0" note="条件付ConfirmDialogを作成。"/>
+    </Minor>
+    <Minor number="3">
+      <Revision number="0" note="BorderLayoutBuilderを作成。"/>
+    </Minor>
+  </Major>
+</Version>

@@ -18,7 +18,7 @@ import ytel.view.parts.OkCancelComponent;
  */
 public class ConfirmDialog extends JDialog implements AgreementListener{
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -75,7 +75,7 @@ public class ConfirmDialog extends JDialog implements AgreementListener{
 	/**
 	 * ユーザの入力が同意である場合はtrue<p/>
 	 * ダイアログを閉じる前に、このメソッドをコールするべきではありません。<br/>
-	 * 基本的にはコンストラクタで指定されたデフォルト値が帰りますが、特にダイアログが
+	 * 基本的にはコンストラクタで指定されたデフォルト値が返りますが、特にダイアログが
 	 * 終了する処理とタイミングが重なった場合など戻り値は未定義です。
 	 * @return ユーザの入力
 	 */

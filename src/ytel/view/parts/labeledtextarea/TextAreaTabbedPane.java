@@ -24,6 +24,10 @@ import javax.swing.JTabbedPane;
 import javax.swing.plaf.metal.MetalIconFactory;
 
 import ytel.view.dialog.ConfirmDialog;
+import ytel.view.dialog.ConfirmWithProbrem;
+import ytel.view.dialog.ConfirmWithProbremDialog.Probrem;
+import ytel.view.dialog.ConfirmWithProbremDialog.ProbremAction;
+import ytel.view.dialog.ConfirmWithProbremDialog.ViewMode;
 import ytel.view.parts.ScrollerWithTextArea;
 import ytel.view.parts.UndoableTextArea;
 
@@ -119,7 +123,7 @@ public class TextAreaTabbedPane extends JTabbedPane {
 	 * @param parent 親フレーム
 	 * @param recomendFont 使用するフォント
 	 */
-	public TextAreaTabbedPane( JFrame parent, Font recomendFont ){
+	public TextAreaTabbedPane(JFrame parent, Font recomendFont){
 		this( parent, "", "TabbedTextArea", recomendFont );
 	}
 
@@ -206,16 +210,26 @@ public class TextAreaTabbedPane extends JTabbedPane {
 	 * 管理されているすべてのタブを閉じます。
 	 */
 	public void closeAll(){
-		boolean force = false;
-		if (tabLabelMap.size() > 1){
-			force = ! ConfirmDialog.isYesNoConfirmed(parent, "確認", "各タブについて[変更の確認]をしますか？", true);
-		}
-
+		ConfirmWithProbrem cwp = new ConfirmWithProbrem("確認", "アプリケーションを終了します。");
 		Set<Labeled> keySet = new HashSet<Labeled>(tabLabelMap.keySet());
-		for(Labeled key: keySet){
-			if (key instanceof TableViewPortTabPanel){
-				removePane((TableViewPortTabPanel)key, force);
+		for (final Labeled key : keySet) {
+			ScrollerWithTextArea entry = tabLabelMap.get(key);
+			if (entry.getTextArea().canUndo()) {
+				cwp.addProbrem(new Probrem("保存されていないファイルがあります。保存しますか？" + key.getLabel().getText(),
+						new ProbremAction() {
+							@Override
+							public String getCaption() {
+								return "破棄";
+							}
+							@Override
+							public void doAction() {
+								removePane((TableViewPortTabPanel)key, true);
+							}
+				}));
 			}
+		}
+		if (cwp.askConfirm(parent, ViewMode.BoxMode)) {
+			System.exit(0);
 		}
 	}
 
@@ -254,13 +268,13 @@ public class TextAreaTabbedPane extends JTabbedPane {
 
 	/**
 	 * TableViewPort用タブ<p/>
-	 * 閉じるボタン&名称変更機能 を加えた複合的なコンポーネントです。 
+	 * 閉じるボタン&名称変更機能 を加えた複合的なコンポーネントです。
 	 * @author y-terada
 	 *
 	 */
 	protected class TableViewPortTabPanel extends JPanel implements Labeled{
 		/**
-		 * 
+		 *
 		 */
 		private static final long serialVersionUID = 1L;
 
@@ -297,7 +311,7 @@ public class TextAreaTabbedPane extends JTabbedPane {
 					close();
 				}
 			});
-			
+
 			add( label );
 			label.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 5));
 			add( buttonClose );

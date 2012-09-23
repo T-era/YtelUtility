@@ -19,7 +19,7 @@ import javax.swing.JButton;
  */
 public class OkCancelComponent extends Container {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -28,6 +28,8 @@ public class OkCancelComponent extends Container {
 
 	private static final String YES_BUTTON_LABEL = "Yes";
 	private static final String NO_BUTTON_LABEL = "No";
+
+	private static final String FORCE_BUTTON_LABEL = "Force";
 
 	/**
 	 * イベントを処理するリスナを指定して、インスタンス生成します。
@@ -80,5 +82,14 @@ public class OkCancelComponent extends Container {
 	 */
 	public static OkCancelComponent getYesNoComponent(AgreementListener listener){
 		return new OkCancelComponent(listener, YES_BUTTON_LABEL, NO_BUTTON_LABEL);
+	}
+
+	/**
+	 * Force/Cancelで同意を求めるコンポーネントを生成します。
+	 * @param listener
+	 * @return 生成したコンポーネント
+	 */
+	public static OkCancelComponent getForceCancelComponent(AgreementListener listener){
+		return new OkCancelComponent(listener, FORCE_BUTTON_LABEL, CANCEL_BUTTON_LABEL);
 	}
 }
