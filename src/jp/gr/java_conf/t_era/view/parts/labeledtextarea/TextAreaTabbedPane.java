@@ -159,7 +159,7 @@ public class TextAreaTabbedPane extends JTabbedPane {
 
 	/**
 	 * 指定されたタブと、そのタブで管理されているテキストエリアを閉じます。<br/>
-	 * {@link #removePane(ytel.view.parts.labeledtextarea.TextAreaTabbedPane.TableViewPortTabPanel, boolean)}メソッドの非強制動作を行います。
+	 * {@link #removePane(jp.gr.java_conf.t_era.view.parts.labeledtextarea.TextAreaTabbedPane.TableViewPortTabPanel, boolean)}メソッドの非強制動作を行います。
 	 * @param key 閉じる処理を行う対象のタブ
 	 */
 	private void removePane(TableViewPortTabPanel key){

@@ -21,7 +21,7 @@ public class UtilityVersionInfo {
 	/**
 	 * バージョン情報ファイル名
 	 */
-	private static final String VERSION_FILE = "/ytel/util/version.xml";
+	private static final String VERSION_FILE = "/jp/gr/java_conf/t_era/util/version.xml";
 
 	/**
 	 * バージョン情報を返します。

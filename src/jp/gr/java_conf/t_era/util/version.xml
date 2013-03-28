@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Version>
   <Application name="Ytel Utitilies"/>
-  <Major number="1" note="">
+  <Major number="0" note="">
     <Minor number="0">
       <Revision number="0" note="FirstRelease"/>
       <Revision number="1" note="mathパッケージ追加"/>
@@ -16,6 +16,11 @@
     </Minor>
     <Minor number="3">
       <Revision number="0" note="BorderLayoutBuilderを作成。"/>
+    </Minor>
+  </Major>
+  <Major number="1" note="" >
+    <Minor number="0">
+      <Revision number="0" note="取得したpackage を使うよ!"/>
     </Minor>
   </Major>
 </Version>
