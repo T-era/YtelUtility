@@ -77,7 +77,9 @@ public class SplitPaneBuilder {
 		return newItem;
 	}
 	public void build(Container con) {
-		con.add(toSplitPane());
+		Component component = toSplitPane();
+		if (component != null)
+			con.add(component);
 	}
 	public Component toSplitPane() {
 		int size = components.size();
