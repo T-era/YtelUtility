@@ -22,5 +22,8 @@
     <Minor number="0">
       <Revision number="0" note="取得したpackage を使うよ!"/>
     </Minor>
+    <Minor number="1">
+      <Revision number="0" note="SplitPaneBuilderを追加したよ!"/>
+    </Minor>
   </Major>
 </Version>
